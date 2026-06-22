@@ -28,8 +28,15 @@
     .header-controls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}
     .toggle-btn{border:1px solid var(--border);background:#fff;color:var(--navy);padding:10px 14px;border-radius:999px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(8,59,102,.04)}
     .toggle-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .header-block{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 8px 24px rgba(8,59,102,.06);transition:grid-template-columns 0.3s ease}
+    .header-block{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 8px 24px rgba(8,59,102,.06);}
     .summary-card,.thumb-card{background:#fbfdff;border:1px solid var(--border);border-radius:12px;padding:18px;transition:all 0.3s ease}
+
+    /* Ensure the single remaining panel spans the full width */
+    .header-block.single-left > .summary-card,
+    .header-block.single-left > .thumb-card {
+      grid-column: 1 / -1;
+    }
+
     .is-hidden{display:none}
     .header-block.single-left{grid-template-columns:1fr}
     .summary-card h2,.thumb-card h2{font-size:20px;margin:0 0 12px;color:var(--navy)}
@@ -80,7 +87,7 @@
         <div class="thumb-card" id="infographic-panel">
           <h2>At a glance</h2>
           <div class="thumb">
-            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/b7a8929c-6f4c-4df2-b7a6-2352e5bb6de3.png" alt="Thumbnail infographic summarising the April 2026 MAS monetary policy de[...]
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/b7a8929c-6f4c-4df2-b7a6-2352e5bb6de3.png" alt="Thumbnail infographic summarising the April 2026 MAS monetary policy de[...]">
           </div>
           <div class="thumb-note">Compact infographic preview for non-expert readers.</div>
           <div class="links">
@@ -92,27 +99,27 @@
 
       <article>
         <h3>INTRODUCTION</h3>
-        <p>1.&nbsp;&nbsp;&nbsp;In its January 2026 monetary policy review, MAS maintained the rate of appreciation of the Singapore dollar nominal effective exchange rate (S$NEER) policy band, with no[...]
+        <p>1.&nbsp;&nbsp;&nbsp;In its January 2026 monetary policy review, MAS maintained the rate of appreciation of the Singapore dollar nominal effective exchange rate (S$NEER) policy band, with no[...]</p>
 
         <h3>GROWTH BACKDROP</h3>
-        <p>2.&nbsp;&nbsp;&nbsp;Shipping through the Strait of Hormuz has been severely constrained since late-February, and worldwide prices of crude oil, natural gas and related chemical compounds ha[...]
-        <p>3.&nbsp;&nbsp;&nbsp;Overall, growth in Singapore's major trading partners will come in weaker than previously expected, reflecting drags on industrial production and expenditure. Nonethel[.[...]
-        <p>4.&nbsp;&nbsp;&nbsp;Advance estimates from MTI show that the economy expanded at a firm pace of 4.6% y-o-y in Q1 2026. Growth continued to be underpinned by the manufacturing and services c[...]
-        <p>5.&nbsp;&nbsp;&nbsp;There is significant uncertainty around the outlook for shipping flows through the Strait of Hormuz. In the meantime, the accumulated energy supply shortfalls and higher[...]
-        <p>6.&nbsp;&nbsp;&nbsp;The situation in the Middle East is evolving and remains highly uncertain. GDP growth in 2026 as a whole is likely to step down from the above-trend pace of growth recor[...]
+        <p>2.&nbsp;&nbsp;&nbsp;Shipping through the Strait of Hormuz has been severely constrained since late-February, and worldwide prices of crude oil, natural gas and related chemical compounds ha[...]</p>
+        <p>3.&nbsp;&nbsp;&nbsp;Overall, growth in Singapore's major trading partners will come in weaker than previously expected, reflecting drags on industrial production and expenditure. Nonethel[...]</p>
+        <p>4.&nbsp;&nbsp;&nbsp;Advance estimates from MTI show that the economy expanded at a firm pace of 4.6% y-o-y in Q1 2026. Growth continued to be underpinned by the manufacturing and services c[...]</p>
+        <p>5.&nbsp;&nbsp;&nbsp;There is significant uncertainty around the outlook for shipping flows through the Strait of Hormuz. In the meantime, the accumulated energy supply shortfalls and higher[...]</p>
+        <p>6.&nbsp;&nbsp;&nbsp;The situation in the Middle East is evolving and remains highly uncertain. GDP growth in 2026 as a whole is likely to step down from the above-trend pace of growth recor[...]</p>
 
         <h3>INFLATION OUTLOOK</h3>
-        <p>7.&nbsp;&nbsp;&nbsp;MAS Core Inflation held steady at 1.2% y-o-y in Jan–Feb 2026, unchanged from the preceding quarter. Prior to the Middle East conflict, import costs for oil and food we[...]
-        <p>8.&nbsp;&nbsp;&nbsp;However, Singapore's import prices of crude oil, natural gas and fuel have risen sharply and will directly add to electricity &amp; gas and transport-related CPI infla[.[...]
-        <p>9.&nbsp;&nbsp;&nbsp;The forecasts for MAS Core Inflation and CPI-All Items inflation have both been raised to 1.5–2.5%, from 1.0–2.0% previously. For the non-core items, private transpo[...]
+        <p>7.&nbsp;&nbsp;&nbsp;MAS Core Inflation held steady at 1.2% y-o-y in Jan–Feb 2026, unchanged from the preceding quarter. Prior to the Middle East conflict, import costs for oil and food we[...]</p>
+        <p>8.&nbsp;&nbsp;&nbsp;However, Singapore's import prices of crude oil, natural gas and fuel have risen sharply and will directly add to electricity &amp; gas and transport-related CPI infla[...]</p>
+        <p>9.&nbsp;&nbsp;&nbsp;The forecasts for MAS Core Inflation and CPI-All Items inflation have both been raised to 1.5–2.5%, from 1.0–2.0% previously. For the non-core items, private transpo[...]</p>
 
         <h3>RISKS TO THE OUTLOOK</h3>
-        <p>10.&nbsp;&nbsp;There are considerable risks around the outlook for inflation and growth. A more persistent disruption to energy supplies will exacerbate inflationary pressures worldwide, as[...]
+        <p>10.&nbsp;&nbsp;There are considerable risks around the outlook for inflation and growth. A more persistent disruption to energy supplies will exacerbate inflationary pressures worldwide, as[...]</p>
 
         <h3>MONETARY POLICY</h3>
-        <p>11.&nbsp;&nbsp;GDP growth in the Singapore economy will slow over the course of this year, while the output gap should average around zero percent. Singapore's imported energy costs have [.[...]
-        <p class="strong">12.&nbsp;&nbsp;MAS will therefore increase slightly the rate of appreciation of the S$NEER policy band. There will be no change to its width and the level at which it is cent[...]
-        <p>13.&nbsp;&nbsp;MAS is in an appropriate position to respond effectively to any risk to medium-term price stability and will continue to closely monitor economic developments amid uncertaint[...]
+        <p>11.&nbsp;&nbsp;GDP growth in the Singapore economy will slow over the course of this year, while the output gap should average around zero percent. Singapore's imported energy costs have [...]</p>
+        <p class="strong">12.&nbsp;&nbsp;MAS will therefore increase slightly the rate of appreciation of the S$NEER policy band. There will be no change to its width and the level at which it is cent[...]</p>
+        <p>13.&nbsp;&nbsp;MAS is in an appropriate position to respond effectively to any risk to medium-term price stability and will continue to closely monitor economic developments amid uncertaint[...]</p>
       </article>
     </div>
   </main>
@@ -121,37 +128,52 @@
     document.addEventListener('DOMContentLoaded', function() {
       const toggleButtons = document.querySelectorAll('.toggle-btn');
       const headerBlock = document.querySelector('.header-block');
-      
+
+      function updateHeaderLayout() {
+        const summaryPanel = document.getElementById('summary-panel');
+        const infographicPanel = document.getElementById('infographic-panel');
+        const summaryHidden = summaryPanel.classList.contains('is-hidden');
+        const infographicHidden = infographicPanel.classList.contains('is-hidden');
+
+        // If exactly one panel is visible, use single-left so that visible panel spans full width
+        if ((summaryHidden && !infographicHidden) || (!summaryHidden && infographicHidden)) {
+          headerBlock.classList.add('single-left');
+        } else {
+          headerBlock.classList.remove('single-left');
+        }
+
+        // Keep aria-expanded and button active state consistent for initial load too
+        toggleButtons.forEach(btn => {
+          const targetId = btn.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+          const hidden = targetEl.classList.contains('is-hidden');
+          btn.setAttribute('aria-expanded', String(!hidden));
+          btn.classList.toggle('active', !hidden);
+        });
+      }
+
       toggleButtons.forEach(button => {
         button.addEventListener('click', function() {
           const targetId = this.getAttribute('data-target');
           const targetElement = document.getElementById(targetId);
-          
+
           if (targetElement) {
             // Toggle visibility
             targetElement.classList.toggle('is-hidden');
-            
-            // Update button state
+
+            // Update button state (handled in updateHeaderLayout too, but keep local for immediate feedback)
             const isHidden = targetElement.classList.contains('is-hidden');
-            this.setAttribute('aria-expanded', !isHidden);
-            this.classList.toggle('active');
-            
-            // Check if any panels are visible and update grid layout
-            const summaryPanel = document.getElementById('summary-panel');
-            const infographicPanel = document.getElementById('infographic-panel');
-            const summaryHidden = summaryPanel.classList.contains('is-hidden');
-            const infographicHidden = infographicPanel.classList.contains('is-hidden');
-            
-            if (summaryHidden && !infographicHidden) {
-              headerBlock.classList.add('single-left');
-            } else if (!summaryHidden && infographicHidden) {
-              headerBlock.classList.add('single-left');
-            } else {
-              headerBlock.classList.remove('single-left');
-            }
+            this.setAttribute('aria-expanded', String(!isHidden));
+            this.classList.toggle('active', !isHidden);
+
+            // Recalculate the header layout
+            updateHeaderLayout();
           }
         });
       });
+
+      // Run once on load to ensure correct layout if any panels start hidden
+      updateHeaderLayout();
     });
   </script>
 </body>
