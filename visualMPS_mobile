@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAS Visual MPS — Mobile-first story mockup</title>
+  <style>
+    :root{
+      --navy:#082747;
+      --navy-2:#123a5c;
+      --navy-3:#1d4d75;
+      --gold:#c6a04a;
+      --gold-2:#e3cf94;
+      --gold-soft:#f7f0dc;
+      --cream:#fbf8f1;
+      --card:#ffffff;
+      --ink:#182432;
+      --muted:#607083;
+      --line:#e6ddcf;
+      --shadow:0 14px 34px rgba(8,39,71,.10);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Segoe UI", Inter, Arial, sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#fff 0%, var(--cream) 48%, #f2ead8 100%);
+      line-height:1.5;
+    }
+
+    .masthead{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .masthead-inner{
+      max-width:760px;
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo-lockup{display:flex;align-items:center;gap:10px;min-width:0}
+    .crest{
+      width:42px;height:42px;border-radius:50%;
+      background:var(--navy);
+      display:grid;place-items:center;flex:0 0 auto;
+      box-shadow:0 7px 18px rgba(8,39,71,.22);
+      border:2px solid var(--gold);
+    }
+    .crest svg{width:29px;height:29px;display:block}
+    .wordmark{min-width:0}
+    .wordmark strong{
+      display:block;font-size:12px;line-height:1.15;
+      letter-spacing:.06em;text-transform:uppercase;color:var(--navy);
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .wordmark span{font-size:11px;color:#6d7885;display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .tag{font-size:11px;color:var(--navy);font-weight:800;background:var(--gold-soft);border:1px solid var(--gold-2);border-radius:999px;padding:6px 9px;white-space:nowrap}
+
+    .page{max-width:760px;margin:0 auto;padding:18px 16px 52px}
+    .story-block{margin:0 0 28px}
+    .hero{
+      min-height:calc(100vh - 74px);
+      display:flex;flex-direction:column;justify-content:center;
+      padding:28px 0 34px;
+    }
+    .panel{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-top:5px solid var(--gold);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+    .eyebrow{
+      color:var(--gold);font-size:12px;font-weight:900;
+      letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;
+    }
+    h1{
+      margin:0 0 14px;
+      color:var(--navy);
+      font-size:clamp(34px, 10vw, 58px);
+      line-height:.98;
+      letter-spacing:-.055em;
+    }
+    .lede{font-size:18px;color:#38495b;margin:0 0 20px}
+    .micro-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .micro-nav a{
+      text-decoration:none;color:var(--navy);font-weight:800;font-size:13px;
+      padding:9px 11px;border-radius:999px;background:var(--gold-soft);border:1px solid var(--gold-2);
+    }
+    .decision-list{display:grid;gap:10px;margin-top:18px}
+    .decision{
+      display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;
+      border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff;
+    }
+    .decision .num{width:34px;height:34px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;border:1px solid var(--gold)}
+    .decision strong{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}.decision span{display:block;color:#5b6877;font-size:14px}
+
+    .section-label{display:flex;align-items:center;gap:10px;margin:0 0 12px}.section-label .dot{width:30px;height:30px;border-radius:11px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;border:1px solid var(--gold)}
+    h2{margin:0;color:var(--navy);font-size:clamp(28px, 7vw, 42px);line-height:1.02;letter-spacing:-.04em}
+    .body-text{font-size:17px;color:#4b5a6a;margin:12px 0 0}
+
+    .visual-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;margin-top:16px;box-shadow:0 10px 24px rgba(8,39,71,.07)}
+    .chart-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#6a7480;font-weight:900;margin-bottom:14px}
+    .sneer-chart{height:250px;position:relative;border-left:2px solid #d6cab7;border-bottom:2px solid #d6cab7;background:linear-gradient(180deg,#fff 0%,#fbf5e8 100%);border-radius:16px 16px 10px 10px;overflow:hidden}
+    .band{position:absolute;left:62px;right:28px;top:70px;height:86px;transform:skewY(-8deg);border:2px solid var(--gold);background:rgba(198,160,74,.16);border-radius:14px}.band-mid{position:absolute;left:70px;right:34px;top:112px;height:3px;background:rgba(198,160,74,.85);transform:rotate(-8deg);border-radius:999px}.sneer-line{position:absolute;left:68px;right:36px;top:102px;height:5px;background:var(--navy);transform:rotate(-8deg);border-radius:999px}.sneer-dot{position:absolute;right:33px;top:82px;width:14px;height:14px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 7px rgba(8,39,71,.12)}
+    .chart-tag{position:absolute;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:850}.tag-band{top:40px;left:58px;color:#8a6c25}.tag-line{top:57px;right:24px;color:var(--navy)}.axis-note{position:absolute;left:16px;right:14px;bottom:8px;display:flex;justify-content:space-between;color:#7b8794;font-size:11px}.fineprint{font-size:12px;color:#7a8794;margin:10px 2px 0}
+
+    .number-card{
+      background:linear-gradient(145deg,#fff,#fbf6e9);
+      border:1px solid var(--line);border-radius:22px;padding:22px;margin-top:16px;text-align:left;
+      box-shadow:0 10px 24px rgba(8,39,71,.07);
+    }
+    .number-card .number{font-size:clamp(48px, 14vw, 76px);font-weight:950;color:var(--navy);line-height:.95;letter-spacing:-.06em}.number-card .caption{font-size:15px;color:#6a5a2f;font-weight:850;margin-top:10px}.number-card p{font-size:14px;color:#667282;margin:10px 0 0;max-width:580px}
+
+    .points{display:grid;gap:10px;margin-top:16px}.point{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:16px;padding:14px}.point strong{display:block;color:var(--navy);margin-bottom:4px}.point span{color:#5d6b7a;font-size:14px}
+
+    .bottomline{background:var(--navy);color:#fff;border-radius:24px;padding:24px;box-shadow:0 18px 36px rgba(8,39,71,.22);border:1px solid var(--gold)}.bottomline h2{color:#fff}.bottomline p{color:#eef3f8;font-size:17px;margin:12px 0 0}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{font-size:12px;font-weight:850;color:#fff;border:1px solid rgba(227,207,148,.55);background:rgba(198,160,74,.18);border-radius:999px;padding:7px 10px}
+    .source-note{background:#fff;border:1px dashed #d8ccb8;border-radius:18px;padding:14px;color:#657386;font-size:12px;margin-top:16px}.source-note a{color:var(--navy);font-weight:900}
+    footer{text-align:center;color:#7b8794;font-size:12px;margin-top:22px}
+
+    @media(min-width:760px){
+      .page{padding-top:28px}.panel{padding:34px}.story-block{margin-bottom:48px}.hero{min-height:calc(100vh - 78px)}
+      .decision-list{grid-template-columns:repeat(3,1fr)}.decision{grid-template-columns:1fr}.decision .num{margin-bottom:2px}
+      .two-up{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.visual-card,.number-card{margin-top:0}.story-row{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:center}.story-row.reverse{grid-template-columns:1.05fr .95fr}.story-row.reverse .copy{order:2}
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="logo-lockup">
+        <div class="crest" aria-label="MAS crest placeholder">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="27" fill="white"/>
+            <path d="M32 9c7 7 15 10 23 10-2 18-9 29-23 36C18 48 11 37 9 19c8 0 16-3 23-10z" fill="#082747"/>
+            <path d="M20 34c8-8 16-8 24 0M19 41c8-6 18-6 26 0" fill="none" stroke="#c6a04a" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="32" cy="25" r="5" fill="#c6a04a"/>
+          </svg>
+        </div>
+        <div class="wordmark"><strong>Monetary Authority of Singapore</strong><span>Visual Monetary Policy Statement</span></div>
+      </div>
+      <div class="tag">April 2026</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero story-block" id="top">
+      <div class="panel">
+        <div class="eyebrow">Monetary policy statement at a glance</div>
+        <h1>MAS will allow the Singapore dollar to appreciate slightly faster</h1>
+        <p class="lede">MAS tightened the exchange-rate policy stance to lean against higher imported inflation, while keeping the S$NEER policy band’s width and centre unchanged.</p>
+        <div class="micro-nav">
+          <a href="#decision">Decision</a><a href="#growth">Growth</a><a href="#inflation">Inflation</a><a href="#bottomline">Bottom line</a>
+        </div>
+        <div class="decision-list" id="decision">
+          <div class="decision"><div class="num">1</div><div><strong>Slope increased slightly</strong><span>The S$NEER appreciation path becomes modestly steeper.</span></div></div>
+          <div class="decision"><div class="num">2</div><div><strong>Width unchanged</strong><span>The band’s flexibility is retained.</span></div></div>
+          <div class="decision"><div class="num">3</div><div><strong>Centre unchanged</strong><span>No re-centring of the policy band.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-block" id="sneer">
+      <div class="story-row">
+        <div class="copy panel">
+          <div class="section-label"><div class="dot">1</div><h2>What did MAS decide?</h2></div>
+          <p class="body-text">MAS will allow the Singapore dollar nominal effective exchange rate to appreciate at a slightly faster pace. This helps reduce imported inflation pressures in an open economy.</p>
+        </div>
+        <div class="visual-card">
+          <div class="chart-title">Illustrative S$NEER policy path</div>
+          <div class="sneer-chart">
+            <div class="band"></div><div class="band-mid"></div><div class="sneer-line"></div><div class="sneer-dot"></div>
+            <div class="chart-tag tag-band">Policy band</div><div class="chart-tag tag-line">S$NEER</div>
+            <div class="axis-note"><span>Jan review</span><span>Apr MPS</span></div>
+          </div>
+          <p class="fineprint">Illustrative only. Not drawn to scale and does not show undisclosed band parameters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-block" id="growth">
+      <div class="story-row reverse">
+        <div class="copy panel">
+          <div class="section-label"><div class="dot">2</div><h2>How does MAS see growth?</h2></div>
+          <p class="body-text">Growth is expected to step down from 2025’s above-trend pace, with external headwinds from higher energy costs and supply disruptions partly offset by support from AI-related activity and domestic investment.</p>
+        </div>
+        <div class="number-card">
+          <div class="chart-title">Growth outlook</div>
+          <div class="number">2.0–4.0%</div>
+          <div class="caption">GDP growth forecast range for 2026</div>
+          <p>Presented as a single forecast range to avoid overloading the visual statement with point estimates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-block" id="inflation">
+      <div class="story-row">
+        <div class="copy panel">
+          <div class="section-label"><div class="dot">3</div><h2>Why is inflation expected to rise?</h2></div>
+          <p class="body-text">Higher energy, transport and utility costs are expected to pass through into a broader range of imported intermediate and consumer goods prices.</p>
+          <div class="points">
+            <div class="point"><strong>Energy shock</strong><span>Oil, gas and fuel costs have risen sharply.</span></div>
+            <div class="point"><strong>Broader pass-through</strong><span>Higher imported costs could lift food, retail goods and services prices.</span></div>
+          </div>
+        </div>
+        <div class="number-card">
+          <div class="chart-title">Inflation outlook</div>
+          <div class="number">1.5–2.5%</div>
+          <div class="caption">MAS Core and CPI-All Items inflation forecast range</div>
+          <p>No chart shown: the range is communicated directly to avoid implying false precision.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-block" id="risks">
+      <div class="panel">
+        <div class="section-label"><div class="dot">4</div><h2>What risks is MAS watching?</h2></div>
+        <p class="body-text">The outlook remains uncertain. MAS is watching whether energy disruptions persist, whether input shortages weigh on production, and whether tighter financial conditions or weaker AI-related investment compound downside risks to growth.</p>
+      </div>
+    </section>
+
+    <section class="story-block" id="bottomline">
+      <div class="bottomline">
+        <h2>Bottom line</h2>
+        <p>A slightly steeper S$NEER appreciation path helps dampen imported inflation and support medium-term price stability, while preserving flexibility through an unchanged band width and centre.</p>
+        <div class="pillrow"><span class="pill">S$NEER-centred framework</span><span class="pill">Slope slightly steeper</span><span class="pill">Width unchanged</span><span class="pill">Centre unchanged</span></div>
+      </div>
+      <div class="source-note">
+        <strong>Mockup note:</strong> Mobile-first stacked layout inspired by ECB-style visual MPS storytelling, adapted to a more restrained MAS navy-and-gold style. Crest is a placeholder; replace with an authorised MAS logo asset for production. Charts are illustrative only.
+        <br><br>
+        Sources: <a href="https://www.mas.gov.sg/news/monetary-policy-statements/2026/mas-monetary-policy-statement-14apr26">MAS Monetary Policy Statement — April 2026</a>; <a href="https://www.ecb.europa.eu/press/press_conference/visual-mps/2026/html/mopo_statement_explained_june.en.html">ECB Visual MPS — June 2026</a>.
+      </div>
+      <footer>Concept mockup · Not an official MAS publication</footer>
+    </section>
+  </main>
+</body>
+</html>
